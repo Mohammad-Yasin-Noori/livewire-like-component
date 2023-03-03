@@ -9,11 +9,6 @@ class LikeComponent extends Component
 {
     public $post;
 
-    public function mount()
-    {
-        // $this->posts = Post::all();
-    }
-
     public function render()
     {
         $posts = Post::all();
