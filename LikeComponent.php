@@ -23,16 +23,15 @@ class LikeComponent extends Component
     public function likePost($post_id)
     {
         $this->post = Post::find($post_id);
-        // if(auth()->check())
-        // {
-            // if($this->post->user_id = auth()->user()->id)
-            if($this->post->user_id = 1)
+         if(auth()->check())
+         {
+            if($this->post->user_id = auth()->user()->id)
             {
                 $this->post->update([
                     'liked' => $this->post->liked == 1 ? 0 : 1,
                     'total_likes' => $this->post->liked == 1 ? $this->post->total_likes-1 : $this->post->total_likes+1
                 ]);
             }
-        // }
+         }
     }
 }
